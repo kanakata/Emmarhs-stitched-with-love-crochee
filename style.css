@@ -565,6 +565,7 @@ header .slider .next{
     gap: 20px;
     cursor: pointer;
     transition: .3s;
+    justify-content: center;
 }
 .cartegories .cartegory-items .cartegory-item{
     display: flex;
@@ -749,4 +750,5 @@ footer p{
     padding-bottom: 10px;
     font-size: 16px;
 }
+
 }
