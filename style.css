@@ -1,0 +1,752 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(238, 230, 232);
+}
+nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background: rgb(238, 230, 232);
+}
+nav .logo{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: pink;
+    text-transform: capitalize;
+}
+nav .logo img{
+    display: none;
+}
+nav .links_1{
+    display: flex;
+    gap: 20px;
+}
+nav .links_1 a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid pink;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+nav .links_1 a:nth-child(1){
+    background-color: pink;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+}
+nav .links_2{
+    display: flex;
+    gap: 20px;
+}
+nav .links_2 a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid pink;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+nav .links_2 a:nth-child(2){
+    background-color: pink;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+}
+nav .links_1 a:hover,
+nav .links_2 a:hover{
+    background-color: deeppink;
+    color: white;
+    transition: .3s;
+}
+header{
+    height: 80vh;
+    width: 95%;
+    margin: auto;
+    background-image: url("images/header-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+header .slider{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+header .slider .items{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    position: relative;
+}
+header .slider .items .item{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 9;
+}
+header .slider .items .item.active{
+    position: absolute;
+    z-index: 10;
+}
+header .slider .items .item img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    filter: brightness(.6);
+}
+header .slider .items .item .text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+}
+header .slider .items .item .text h2{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+header .slider .items .item .text p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+header .slider .items .item .text a{
+    text-decoration: none;
+    color: white;
+    background-color: pink;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+header .slider .items .item .text a:hover{
+    background-color: deeppink;
+    transition: .3s;
+}
+header .slider .prev{
+    position: absolute;
+    z-index: 11;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    height: 30px;
+    width: 40px;
+    color: white;
+    background: pink;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 900;
+}
+header .slider .next{
+    position: absolute;
+    z-index: 11;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    height: 30px;
+    width: 40px;
+    color: white;
+    background: pink;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 900;
+}
+header .slider .pagination{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 12;
+    bottom: 10px;
+}
+header .slider .pagination .dot{
+    height: 15px;
+    width: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+header .slider .pagination .dot.active{
+    background: pink;
+}
+
+
+/* cartegories */
+.cartegories{
+    width:  95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.cartegories h2{
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1px;
+    color: pink;
+}
+.cartegories p{
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.cartegories p span{
+    color: pink;
+    font-weight: 700;
+    padding: 10px 0px;
+}
+.cartegories .cartegory-items{
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.cartegories a{
+    text-decoration: none;
+    font-size: 30px;
+}
+.cartegories .cartegory-items .cartegory-item{
+    display: flex;
+    flex-direction: column  ;
+}
+.cartegories .cartegory-items .cartegory-item img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.cartegories .cartegory-items .cartegory-item h3{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 10px;
+    color: black;   
+}
+
+
+/* about me */
+.about-me{
+    width: 100%;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: pink;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-top: 5px solid pink;
+    padding-top: 40px;
+}
+.about{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.about-me span{
+    height: 5px;
+    width: 100px;
+    background: pink;
+}
+.about .about-image{
+    height: 400px;
+    width: 400px;
+    border-radius: 5px;
+    object-fit: cover;
+    background: transparent;
+}
+.about .about-image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+    filter: brightness(.8);
+}
+.about .about-text{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+}
+.about .about-text p{
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: black;
+    line-height: 1.6;
+}
+.about .about-text a{
+    text-decoration: none;
+    color: white;
+    background: pink;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    width: fit-content;
+}
+.about .about-text a:hover{
+    background-color: deeppink;
+    transition: .3s;
+}
+
+
+/* products */
+.products{
+    width: 100%;
+    margin: auto;
+    border-top: 5px solid pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.products h2{
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1px;
+    color: pink;
+    margin: 30px 0;
+}
+.products .product-items{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+.products .product-items .product-item{
+    height: 350px;
+    width: 250px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.products .product-items .product-item:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    transform: translateY(-5px);
+}
+.products .product-items .product-item img{
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.products .product-items .product-item h3{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: black;
+}
+.products .product-items .product-item p{
+    font-size: 18px;
+    font-weight: 500;
+    color: pink;
+    text-transform: capitalize;
+}
+.products .product-items .product-item a{
+    text-decoration: none;
+    color: white;
+    background-color: pink;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.products .product-items .product-item a:hover{
+    background-color: deeppink;
+    transition: .3s;
+}
+
+
+/* footer */
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: pink;     
+    padding: 20px;
+    gap: 10px;
+}
+footer a{
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+footer span.material-symbols-outlined{
+    font-size: 24px;
+}
+footer a img{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+}
+footer p{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+
+/* media query */
+@media (max-width: 768px){
+nav{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background: rgb(238, 230, 232);
+}
+nav .logo{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: pink;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+nav .logo img{
+    display: block;
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+}
+nav .links_1{
+    display: none;
+}
+nav .links_2{
+    display: none;
+}
+header{
+    height: 80vh;
+    width: 99%;
+}
+header .slider .items .item .text h2{
+    font-size: 30px;
+}
+header .slider .items .item .text p{
+    font-size: 15px;
+}
+header .slider .items .item .text a{
+    margin-top: 20px;
+}
+header .slider .prev{
+    top: 70%;
+}
+header .slider .next{
+    top: 70%;
+}
+
+
+/* cartegories */
+.cartegories{
+    width:  100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.cartegories h2{
+    font-size: 30px;
+}
+.cartegories p{
+    font-size: 15px;
+    text-align: center;
+}
+.cartegories .cartegory-items{
+    flex-wrap: wrap;
+    gap: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+.cartegories .cartegory-items .cartegory-item{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.cartegories .cartegory-items .cartegory-item img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.cartegories .cartegory-items .cartegory-item h3{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 10px;
+    color: black;   
+}
+
+
+/* about me */
+.about-me{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: pink;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-top: 3px solid pink;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.about{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-me span{
+    height: 3px;
+}
+.about .about-image{
+    height: 200px;
+    width: 100%;
+    border-radius: 0px;
+    object-fit: cover;
+    background: transparent;
+}
+.about .about-image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+    filter: brightness(.7);
+}
+.about .about-text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+}
+.about .about-text p{
+    font-size: 15px;
+    line-height: 1.3;
+}
+.about .about-text .btn{
+    width: 100%;
+    background: pink;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about .about-text a:hover{
+    background-color: deeppink;
+    transition: .3s;
+}
+
+
+/* products */
+.products{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-top: 3px solid pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.products h2{
+    font-size: 25px;
+}
+.products .product-items{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    width: 100%;
+}
+.products .product-items .product-item{
+    height: 350px;
+    width: 90%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+.products .product-items .product-item:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    transform: translateY(-5px);
+}
+.products .product-items .product-item img{
+    width: 100%;
+}
+.products .product-items .product-item h3{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: black;
+}
+.products .product-items .product-item p{
+    font-size: 18px;
+    font-weight: 500;
+    color: pink;
+    text-transform: capitalize;
+}
+.products .product-items .product-item a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* footer */
+footer{   
+    padding: 10px;
+    gap: 5px;
+}
+footer h2{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+footer a{
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    gap: 10px;
+}
+footer span.material-symbols-outlined{
+    font-size: 20px;
+}
+footer a img{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+}
+footer p{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+}
